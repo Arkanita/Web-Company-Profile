@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ELZIEE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+    <style>
+body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #ff4949;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  } 
+.jumbotron {
+    background-color: #f4511e; /* Orange */
+    color: #ffffff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+}
+.bg-grey {
+    background-color: #f6f6f6;
+}
+.container-fluid {
+    padding: 60px 50px;
+}
+.logo-small {
+    color: #ff6846;
+    font-size: 50px;
+}
+
+.logo {
+    color: #CC0000;
+    font-size: 200px;
+}
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+.thumbnail:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+        }
+.thumbnail img {
+    width: 450px;
+    height: 300px;
+    margin-bottom: 10px;
+}
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #2d2d30;
+}
+
+.carousel-indicators li {
+    border-color: #2d2d30;
+}
+
+.carousel-indicators li.active {
+    background-color: #CC0000;
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+.item span {
+    font-style: normal;
+}
+.panel {
+    border: 1px solid #000000;
+    border-radius:0;
+    transition: box-shadow 0.5s;
+}
+
+.panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+
+.panel-footer .btn:hover {
+    border: 1px solid #ff9260;
+    background-color: #fff !important;
+    color: #CC0000;
+}
+
+.panel-heading {
+    color: #fff !important;
+    background-color: #ff9e8a !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.panel-footer {
+    background-color: #fff !important;
+}
+
+.panel-footer h3 {
+    font-size: 32px;
+}
+
+.panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.panel-footer .btn {
+    margin: 15px 0;
+    background-color: #ff9e8a;
+    color: #fff;
+}
+.navbar {
+    margin-bottom: 0;
+    background-color: #FF5733;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+    opacity: 0.9;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #CC0033 !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #CC0033;
+        }
+.slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    /* The duration of the animation */
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible;
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+.carousel-inner img {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%); /* make all photos black and white */ 
+      width: 80%; /* Set width to 100% */
+      margin: auto;
+    height: 300;
+  }
+.carousel-caption h3 {
+      color: #2d2d30 !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }  
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+
+</style>
+    
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    
+ <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="img/elzie.png" alt="elzie" width="70" height="50">
+      <!--a class="navbar-brand" href="#">Elzillery</a-->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#product">PRODUCT</a></li>
+        <li><a href="#order">ORDER</a></li>
+        <li><a href="#profile">PROFILE</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="img/gelang2.jpeg" alt="gelang2" width="50" height="20">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p>"Life is colourfull, Choose your true colour"</p>
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="img/pernik1.jpeg" alt="pernik1" width="1400" height="300">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>      
+      </div>
+    
+      <div class="item">
+        <img src="img/cincin.jpeg" alt="cincin" width="1400" height="300">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+    
+<div id="about" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+    <h2>ELZILLERY</h2>
+    <h4>Akhir - akhir ini masyarakat ikut dihebohkan dengan adanya trend dari korea selatan berupa kerajinan manik - manik. Mulai dari gelang, cincin, kalung, dan tas. 
+    Tak bisa dipungkiri memang, kalau perhiasan yang terbuat dari manik - manik ini memang menjadi sebuah tambahan modis perhiasan, dengan pilihan warna dan gaya manik yang sangat beragam.
+    Aksesoris ini juga banyak digandrungi anak - anak kecil hingga remaja milenial seperti sekarang ini.</h4>
+  <p></p>
+</div>
+</div>
+    
+
+</div>
+    </div>
+    </div>
+
+    <div id="product" class="container-fluid">
+      <div class="text-center">
+        <h2>PRODUCT</h2>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h1>Gelang Nama</h1>
+            </div>
+            <div class="panel-body">
+                <img src="img/gelnama.jpeg" alt="gelnama" width="300" height="250">
+              <p><strong>S/M/L/Custom</strong></p>
+              <p><strong>Gelang berbahan dasar manik dengan tambahan nama atau inisial dari pembeli</strong></p>
+            </div>
+            <div class="panel-footer">
+              <h3>Rp. 10.000,-</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h1>Gelang Karakter</h1>
+            </div>
+            <div class="panel-body">
+              <img src="img/gelkarakter.jpeg" alt="gelkarakter" width="300" height="250">
+              <p><strong>S/M/L/Custom</strong></p>
+              <p><strong>Gelang berbahan dasar manik dengan tambahan karakter yang lucu nan imut</strong></p>
+            </div>
+            <div class="panel-footer">
+              <h3>Rp. 12.500,-</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h1>Gelang Couple</h1>
+            </div>
+            <div class="panel-body">
+              <img src="img/gelcouple.jpeg" alt="gelcouple" width="300" height="250">
+              <p><strong>S/M/L/Custom</strong></p>
+              <p><strong>Gelang berbahan dasar manik dengan tambahan inisial pasangan atau sahabat</strong></p>
+            </div>
+            <div class="panel-footer">
+              <h3>Rp. 10.000,-</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h1>Tas Manik</h1>
+            </div>
+            <div class="panel-body">
+              <img src="img/tasmanik.jpeg" alt="tasmanik" width="300" height="250">
+              <p><strong>Custom</strong></p>
+              <p><strong>Tas berbahan dasar manik yang cukup lucu yang dapat membawa dompet dan hp</strong></p>
+            </div>
+            <div class="panel-footer">
+              <h3>Rp. 40.000,-</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h1>Cincin Manik</h1>
+            </div>
+            <div class="panel-body">
+              <img src="img/cincin2.jpeg" alt="cincin2" width="300" height="250">
+              <p><strong>S/M/L/Custom</strong></p>
+              <p><strong>Cincin berbahan dasar manik dengan desain yang lucu dan stylish di jari-jari tangan</strong></p>
+            </div>
+            <div class="panel-footer">
+              <h3>Rp. 5.000,-</h3>
+            </div>
+          </div>
+        </div>
+       <div class="col-sm-4">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h1>Kalung Manik</h1>
+            </div>
+            <div class="panel-body">
+              <img src="img/kalungmanik.jpeg" alt="kalungmanik" width="300" height="250">
+              <p><strong>S/M/L/Custom</strong></p>
+              <p><strong>Kalung berbahan dasar manik dengan desain yang sederhana namun elegant saat digunakan</strong></p>
+            </div>
+            <div class="panel-footer">
+              <h3>Rp. 15.000,-</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Container (Services Section) -->
+  <div id="order" class="container-fluid text-center">
+    <h2>Order</h2>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+        <a href="whatsapp://send?text=Hello&phone=+6285755201436">
+          <div class="panel-heading">
+            <img src="img/whatsapp.png" alt="whatsapp" width="20" height="20">
+            <h4>Order Via WhatsApp</h4>
+            <p></p>   
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-4">
+        <a href="https://www.instagram.com/elzillery/">
+          <div class="panel-heading">
+            <img src="img/ig.png" alt="ig" width="20" height="20">
+            <h4>Order Via Instagram</h4>
+            <p></p>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-4">
+        <a href="https://shp.ee/jwdsyka">
+          <div class="panel-heading">
+            <img src="img/shopee.png" alt="shopee" width="22" height="22">
+            <h4>Order Via Shopee</h4>
+            <p></p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="profile" class="container-fluid bg-grey">
+   <h2 class="text-center">PROFILE</h2>
+    <div class="row">
+      <div class="col-sm-6 text-right">
+        <img src="img/mapoto.jpeg" alt="mapoto" width="320" height="440">
+      </div>
+      <div class="col-sm-6">
+        <p>Nama : Arkanita Nisywa Haryono</p>
+        <P>Jurusan : Teknik Komputer dan Jaringan</P>
+        <p>Sekolah : SMK Telkom Malang</p>
+        <p>TTL   : Madiun, 06 Juli 2005</p>
+        <p>Alamat : JL. Danau Kerinci IV G6 C10</p>
+        <p>Jenis Kelamin : Perempuan</p>
+        <p>Agama : Islam</p>
+        <p>Nomor telepon : +6282244641975</p>
+        <p>Email : arkanita583@gmail.com</p>
+        <p>Hobi : Menyanyi</p>
+      </div>
+    </div>
+  </div>
+
+    
+ <div id="contact" class="container-fluid">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <p>Hubungi kami dan kami akan menghubungi Anda kembali dalam waktu 24 jam.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Ponorogo, Indonesia</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +6285755201436</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> arkanita583@gmail.com</p>
+    </div>
+    <!--div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div-->
+  </div>
+</div>
+
+<div id="googleMap" style="height:400px;width:100%;"></div>
+
+<!-- Add Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter = new google.maps.LatLng(-7.871068, 111.475181);
+
+function initialize() {
+var mapProp = {
+  center:myCenter,
+  zoom:12,
+  scrollwheel:false,
+  draggable:false,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Elzillery &copy;2022 <a href="https://github.com/ricofa/CompanyProfile" title="Visit ricofa">Credit ricofa</a></p>
+</footer>
+
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== ""){
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+</body>
+</html>
