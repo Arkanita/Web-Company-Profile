@@ -12,7 +12,7 @@
 body {
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
-      color: #818181;
+      color: #000000;
   }
   h2 {
       font-size: 24px;
@@ -24,7 +24,7 @@ body {
   h4 {
       font-size: 19px;
       line-height: 1.375em;
-      color: #303030;
+      color: #000000;
       font-weight: 400;
       margin-bottom: 30px;
   } 
@@ -72,7 +72,7 @@ body {
 }
 
 .carousel-indicators li.active {
-    background-color: #CC0000;
+    background-color: #FF5733;
 }
 
 .item h4 {
@@ -99,7 +99,7 @@ body {
 .panel-footer .btn:hover {
     border: 1px solid #ff9260;
     background-color: #fff !important;
-    color: #CC0000;
+    color: #FF5733;
 }
 
 .panel-heading {
@@ -149,7 +149,7 @@ body {
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #CC0033 !important;
+    color: #FF5733 !important;
     background-color: #fff !important;
 }
 
@@ -160,7 +160,7 @@ body {
 footer .glyphicon {
     font-size: 20px;
     margin-bottom: 20px;
-    color: #CC0033;
+    color: #FF5733;
         }
 .slideanim {visibility:hidden;}
 .slide {
@@ -203,7 +203,7 @@ footer .glyphicon {
     height: 300;
   }
 .carousel-caption h3 {
-      color: #2d2d30 !important;
+      color: #000000 !important;
   }
   @media (max-width: 600px) {
     .carousel-caption {
@@ -225,6 +225,47 @@ footer .glyphicon {
         font-size: 150px;
     }
   }
+  /* Style container dengan tepi bulat, latar belakang abu-abu dan beberapa padding dan margin */
+.container2 {
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Hapus float setelah container */
+.container2::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Gambar melakukan float di dalam container ke kiri. Tambahkan margin kanan, dan beri gaya gambar sebagai lingkaran*/
+.container2 img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Tingkatkan ukuran font elemen span */
+.container2 span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+/* Tambahkan kueri media untuk responsivitas. Ini akan memusatkan teks dan gambar di dalam container */
+@media (max-width: 500px) {
+  .container2 {
+    text-align: center;
+  }
+
+  .container2 img {
+    margin: auto;
+    float: none;
+    display: block;
+  }
+}
 
 </style>
     
@@ -246,6 +287,7 @@ footer .glyphicon {
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#product">PRODUCT</a></li>
+        <li><a href="#preview">PREVIEW</a></li>
         <li><a href="#order">ORDER</a></li>
         <li><a href="#profile">PROFILE</a></li>
         <li><a href="#contact">CONTACT</a></li>
@@ -414,6 +456,41 @@ footer .glyphicon {
       </div>
     </div>
 
+    <div id="preview" class="container-fluid">
+      <div class="text-center">
+        <h2>Preview</h2>
+    <div id="preview" class="container2">
+      <div class="text-center">
+      </div>
+      <img src="https://dosenit.com/wp-content/uploads/2021/02/136-1369892_avatar-people-person-business-user-man-character-avatar.png" alt="Avatar" style="width:90px">
+      <p><span>Evandika</span> (Gelang Couple)</p>
+      <p>Gelangnya bagus, pasangan saya menyukainya.</p>
+    </div>
+    
+    <div class="container2">
+      <img src="https://dosenit.com/wp-content/uploads/2021/02/images.png" alt="Avatar" style="width:90px">
+      <p><span>Mariana</span>(Tas Manik)</p>
+      <p>Waktu pertama kali tahu kok ada tas dari bahan manik dan ternyata ada dan lucu banget waktu dipakai.</p>
+    </div>
+  
+    <div class="container2">
+      <img src="https://static.vecteezy.com/system/resources/previews/009/749/748/original/female-avatar-icon-cartoon-woman-profile-mascot-illustration-girl-face-business-user-logo-free-vector.jpg" alt="Avatar" style="width:90px">
+      <p><span>Dinaav</span>(Gelang Karakter)</p>
+      <p>Gelangnya bagus kualitasnya juga bagus, barangnya pun sesuai dengan apa yang saya ekspetasikan.</p>
+    </div>
+  
+    <div class="container2">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/009/749/832/small/boy-avatar-icon-cartoon-young-guy-profile-mascot-illustration-head-face-business-user-logo-free-vector.jpg" alt="Avatar" style="width:90px">
+      <p><span>Kenzoore</span>(Gelang Nama)</p>
+      <p>gelang yang saya pesan desain nya menarik dan kualitas bagus.</p>
+    </div>
+  
+    <div class="container2">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/009/749/878/small_2x/woman-profile-mascot-illustration-female-avatar-icon-cartoon-girl-head-face-business-user-logo-free-vector.jpg" alt="Avatar" style="width:90px">
+      <p><span>Tsaniilya</span>(Cincin dan Kalung)</p>
+      <p>Barangnya bagus walaupun ada beberapa bagian manik yang warnanya berbeda dengan yang saya inginkan.</p>
+    </div>
+
 <!-- Container (Services Section) -->
   <div id="order" class="container-fluid text-center">
     <h2>Order</h2>
@@ -455,7 +532,8 @@ footer .glyphicon {
       <div class="col-sm-6 text-right">
         <img src="img/mapoto.jpeg" alt="mapoto" width="320" height="440">
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-2">
+        <br>
         <p>Nama : Arkanita Nisywa Haryono</p>
         <P>Jurusan : Teknik Komputer dan Jaringan</P>
         <p>Sekolah : SMK Telkom Malang</p>
